@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import BooksPage from './container/pages/BooksPage';
+import BookNewPage from './container/pages/BookNewPage';
 import BookDetailsPage from './container/pages/BookDetailsPage';
 import BookEditPage from './container/pages/BookEditPage';
 import HomePage from './container/pages/HomePage';
@@ -16,6 +17,7 @@ function App() {
       <main>
         <Switch>
           <Route path="/books/:isbn/edit" component={BookEditPage} />
+          <Route path="/books/new" component={BookNewPage} />
           <Route path="/books/:isbn" component={BookDetailsPage} />
           <Route path="/books" component={BooksPage} />
           <Route path="/" component={HomePage} />

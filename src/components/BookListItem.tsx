@@ -3,10 +3,17 @@ import { IBook } from '../types';
 import { Link } from 'react-router-dom';
 import { bookDetailsPath } from '../api/books';
 
-const BookListItem: React.FC<IBook> = ({title, isbn}) => {
+interface BookListItemProps extends IBook {
+	onDelete(isbn: string): void;
+}
 
+const BookListItem: React.FC<BookListItemProps> = ({title, isbn, onDelete}) => {
+	const handleClick = () => onDelete(isbn);
 	return (
-		<div><Link to={bookDetailsPath(isbn)}>{title}</Link></div>
+		<div>
+			<Link to={bookDetailsPath(isbn)}>{title}</Link>
+			<button onClick={handleClick}>[X]</button>
+		</div>
 	)
 }
 
