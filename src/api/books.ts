@@ -2,7 +2,7 @@ import * as constants from './constants';
 import { IBook } from '../types';
 import BookError from './BookError';
 
-// Browser pahts
+// Browser paths
 export function bookDetailsPath(isbn: string): string {
 	return `/${constants.BOOKS_PATH}/${isbn}`;
 }
